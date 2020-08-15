@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maze", "Maze\Maze.csproj", "{099B3612-DA0E-4E16-BE8D-C5E45022B191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver", "Driver\Driver.csproj", "{1A4508E5-AD2E-4DE5-AA93-56841B8F228F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{099B3612-DA0E-4E16-BE8D-C5E45022B191}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{099B3612-DA0E-4E16-BE8D-C5E45022B191}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{099B3612-DA0E-4E16-BE8D-C5E45022B191}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{099B3612-DA0E-4E16-BE8D-C5E45022B191}.Release|anycpu.Build.0 = Release|Any CPU
+		{1A4508E5-AD2E-4DE5-AA93-56841B8F228F}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{1A4508E5-AD2E-4DE5-AA93-56841B8F228F}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{1A4508E5-AD2E-4DE5-AA93-56841B8F228F}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{1A4508E5-AD2E-4DE5-AA93-56841B8F228F}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
