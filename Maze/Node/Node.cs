@@ -1,5 +1,3 @@
-using System;
-
 namespace Maze.Node
 {
     public class Node
@@ -13,14 +11,9 @@ namespace Maze.Node
         {
             Walls -= wall;
         }
-
         public void RemoveAllWalls()
         {
             Walls = NodeWalls.None;
-        }
-        public void DrawNode()
-        {
-            Console.Write("");
         }
     }
 }

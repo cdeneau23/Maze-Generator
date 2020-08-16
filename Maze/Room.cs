@@ -17,7 +17,6 @@ namespace Maze
             RoomHeight = 2;
             Nodes = new List<Node.Node>();
         }
-
         public void PlaceRoom(Node.Node[,] grid, Random rand)
         {
             var maxX = grid.GetLength(0) - 2;
@@ -43,7 +42,6 @@ namespace Maze
                 }
             }
         }
-
         private void ResetNodes()
         {
             foreach (var n in Nodes)

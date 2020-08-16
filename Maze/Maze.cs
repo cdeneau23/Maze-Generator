@@ -135,6 +135,5 @@ namespace Maze
             }
             Console.WriteLine(firstLine + "+");
         }
-
     }
 }
