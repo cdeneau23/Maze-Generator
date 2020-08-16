@@ -14,6 +14,7 @@ namespace Maze
         private readonly int _numberOfRooms; // TODO: Figure out how to build and place rooms
 
         private Node.Node[,] _grid;
+        private List<Room> _rooms = new List<Room>();
         private readonly Random _rand;
 
         public Maze(int width, int height, int rooms)
@@ -24,6 +25,8 @@ namespace Maze
             _rand = new Random();
             
             GenerateNodeGrid();
+            
+            // GenerateRooms();
 
             Carve(_rand.Next(_width), _rand.Next(_height));
         }
@@ -49,6 +52,14 @@ namespace Maze
         private void GenerateRooms()
         {
             //TODO: Create rooms and place them on the grid
+
+            for (var i = 0; i < _numberOfRooms; i++)
+            {
+                var room = new Room();
+                room.PlaceRoom(_grid, _rand);
+                if (room.IsValid)
+                    _rooms.Add(room);
+            }
         }
         private void Carve(int x, int y)
         {
@@ -60,9 +71,9 @@ namespace Maze
 
             foreach(var node in randNeighbors)
             {
-                _grid[x, y].Walls -= node.Wall;
+                _grid[x, y].RemoveWall(node.Wall);
 
-                _grid[node.Node.X, node.Node.Y].Walls -= node.Wall.OppositeWall();
+                _grid[node.Node.X, node.Node.Y].RemoveWall(node.Wall.OppositeWall());
 
                 Carve(node.Node.X, node.Node.Y);
             }
@@ -114,7 +125,7 @@ namespace Maze
                 var sbMid = new StringBuilder();
                 for (var x = 0; x < _width; x++)
                 {
-                    sbTop.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Top) ? "*--" : "+  ");
+                    sbTop.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Top)  ? "*--" : "*  ");
                     sbMid.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Left) ? "|  " : "   ");
                 }
                 if (firstLine == string.Empty)
