@@ -1,3 +1,5 @@
+using System;
+
 namespace Maze.Node
 {
     public struct Node
@@ -6,5 +8,10 @@ namespace Maze.Node
         public int Y { get; set; }
         public NodeWalls Walls { get; set; }
         public bool Visited { get; set; }
+
+        public void DrawNode()
+        {
+            Console.Write("");
+        }
     }
 }

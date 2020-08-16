@@ -107,7 +107,6 @@ namespace Maze
         }
         public void Print()
         {
-            // TODO: Figre out a cleaner way to draw the maze, Does it matter?
             var firstLine = string.Empty;
             for (var y = 0; y < _height; y++)
             {
@@ -115,13 +114,12 @@ namespace Maze
                 var sbMid = new StringBuilder();
                 for (var x = 0; x < _width; x++)
                 {
-                    sbTop.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Top) ? "+--" : "+  ");
+                    sbTop.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Top) ? "*--" : "+  ");
                     sbMid.Append(_grid[x, y].Walls.HasFlag(NodeWalls.Left) ? "|  " : "   ");
                 }
                 if (firstLine == string.Empty)
                     firstLine = sbTop.ToString();
-                Console.WriteLine(sbTop + "+");
-                Console.WriteLine(sbMid + "|");
+                Console.WriteLine(sbTop + "*");
                 Console.WriteLine(sbMid + "|");
             }
             Console.WriteLine(firstLine + "+");
