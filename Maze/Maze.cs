@@ -25,7 +25,7 @@ namespace Maze
             
             GenerateNodeGrid();
 
-            Carve(_rand.Next(_height), _rand.Next(_width));
+            Carve(_rand.Next(_width), _rand.Next(_height));
         }
         private void GenerateNodeGrid()
         {
@@ -52,8 +52,6 @@ namespace Maze
         }
         private void Carve(int x, int y)
         {
-            // Console.WriteLine($"({x},{y})");
-            // TODO : Figure out why I get a random out of bounds here
             _grid[x, y].Visited = true;
 
             var randNeighbors = GetNeighbor(_grid[x, y])

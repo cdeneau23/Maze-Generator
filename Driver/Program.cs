@@ -6,7 +6,7 @@ namespace Driver
     {
         static void Main(string[] args)
         {
-                var maze = new Maze.Maze(5, 5, 10);
+                var maze = new Maze.Maze(15, 5, 10);
                 maze.Print();
         }
     }
